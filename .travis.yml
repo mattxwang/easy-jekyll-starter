@@ -1,0 +1,11 @@
+language: ruby
+cache: bundler
+rvm:
+- 2.6.3
+
+script:
+  - bundle exec rake build
+  # this next line runs HTMLProofer on your built site; find out more at https://github.com/gjtorikian/html-proofer
+  # - bundle exec rake test
+
+sudo: false
