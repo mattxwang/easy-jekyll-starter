@@ -35,11 +35,13 @@ If you haven't already, we're first going to install [bundler](https://bundler.i
 $ gem install bundler
 ```
 
-Then, we'll install all of our dependencies from our `Gemfile`. I haven't committed a `Gemfile.lock` on purpose, so bundle will generate one for you.
+Then, we'll install all of our dependencies from our `Gemfile`.
 
 ```sh
 $ bundle
 ```
+
+I've committed `Gemfile.lock`, which specifies what versions of gems to use. If you'd like, you can run `bundle update` to update them.
 
 Now, you're ready to use the site! You can use `bundle exec jekyll serve` to serve the site, or `bundle exec jekyll build` to build it.
 
