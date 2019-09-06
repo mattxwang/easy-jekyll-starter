@@ -18,16 +18,14 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Your awesome title
-email: your-email@example.com
+title: Easy Jekyll Starter
+email: matt@matthewwang.me
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  🧪A (lightly) opinionated Jekyll starter designed to replace jekyll new. Ejects minima out of its gem theme, adds template code for Travis CI build, test, and deploy.
 baseurl: "/easy-jekyll-starter" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+url: "https://malsf21.github.io/easy-jekyll-starter" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: malsf21
+github_username:  malsf21
 
 # Build settings
 plugins:
