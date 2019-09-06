@@ -37,6 +37,21 @@ $ bundle
 
 Now, you're ready to use the site! You can use `bundle exec jekyll serve` to serve the site, or `bundle exec jekyll build` to build it.
 
+```sh
+$ rake serve
+bundle exec jekyll serve
+Configuration file: /Users/malsf21/code/easy-jekyll-starter/_config.yml
+            Source: /Users/malsf21/code/easy-jekyll-starter
+       Destination: /Users/malsf21/code/easy-jekyll-starter/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating... 
+       Jekyll Feed: Generating feed for posts
+                    done in 0.561 seconds.
+ Auto-regeneration: enabled for '/Users/malsf21/code/easy-jekyll-starter'
+    Server address: http://127.0.0.1:4000/easy-jekyll-starter/
+  Server running... press ctrl-c to stop.
+```
+
 Those commands are a bit of a mouthful, so I've made quick rake shortcuts that will save you a few valuable keystrokes:
 
 ```sh
@@ -59,13 +74,10 @@ Running ["ScriptCheck", "ImageCheck", "LinkCheck"] on ["./_site"] on *.html...
 
 ## Integrating With Travis
 
-I've packaged a `.travis.yml` that builds the site on a Ruby of your choice. By default, it just runs `bundle exec jekyll build`, and therefore will error if you have a Jekyll build error.
-
-In addition, there's also a commented-out line that runs html-proofer on the built site. This works with varying success - sometimes, HTTP timeouts will signify dead links, and sometimes, they signify bad internet - but it's a useful tool that you can include instead!
-
-There's also a commented-out `deploy` key that automatically builds and deploys the result of `bundle exec jekyll build` to GitHub Pages. This is useful if you're using gems (or other pre-deploy processing) that GitHub Pages' gem doesn't support by default.
+I've packaged a `.travis.yml` that builds the site on a Ruby of your choice. By default, it does two things: just run `bundle exec jekyll build`, which will error if you have a Jekyll build error, and then automatically build and deploy the result of `bundle exec jekyll build` to GitHub Pages. This is useful if you're using gems (or other pre-deploy processing) that GitHub Pages' gem doesn't support.
 
 ```yaml
+# this will fail if you don't set github_token in Travis!
 deploy:
   provider: pages
   skip_cleanup: true
@@ -76,3 +88,5 @@ deploy:
 ```
 
 In order to use it, you'll need to set the `$github_token` to a valid GitHub personal access token as a Travis variable. You can generate a token from [here](https://github.com/settings/tokens).
+
+In addition, there's also a commented-out line that runs html-proofer on the built site. This works with varying success - sometimes, HTTP timeouts will signify dead links, and sometimes, they signify bad internet - but it's a useful tool that you can include instead!
