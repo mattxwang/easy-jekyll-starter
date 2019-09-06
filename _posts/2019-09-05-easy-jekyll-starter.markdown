@@ -11,7 +11,7 @@ Hey, thanks for using this starter template! I guess I should explain why this e
 This is a simple template repository for [Jekyll](https://jekyllrb.com). It does two simple things over `jekyll new ...`:
 
 * by default, ejects [minima](https://github.com/jekyll/minima) from its gem wrapper; this makes it easier to see what Jekyll is doing under the hood, and makes it easy to build your own theme
-* adds template code for [Travis CI](https://travis-ci.com), which uses [rake](https://github.com/ruby/rake) and optionally [html-proofer](https://github.com/gjtorikian/html-proofer) to check if the site built correctly
+* adds template code for [Travis CI](https://travis-ci.com), which uses [rake](https://github.com/ruby/rake) and optionally [html-proofer](https://github.com/gjtorikian/html-proofer) to check if the site built correctly, and auto-deploys the site to GitHub Pages
 
 Other than that, I basically leave minima untouched.
 
@@ -68,3 +68,17 @@ Running ["ScriptCheck", "ImageCheck", "LinkCheck"] on ["./_site"] on *.html...
 I've packaged a `.travis.yml` that builds the site on a Ruby of your choice. By default, it just runs `bundle exec jekyll build`, and therefore will error if you have a Jekyll build error.
 
 In addition, there's also a commented-out line that runs html-proofer on the built site. This works with varying success - sometimes, HTTP timeouts will signify dead links, and sometimes, they signify bad internet - but it's a useful tool that you can include instead!
+
+There's also a commented-out `deploy` key that automatically builds and deploys the result of `bundle exec jekyll build` to GitHub Pages. This is useful if you're using gems (or other pre-deploy processing) that GitHub Pages' gem doesn't support by default.
+
+```yaml
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $github_token
+  local_dir: _site
+  on:
+    branch: master
+```
+
+In order to use it, you'll need to set the `$github_token` to a valid GitHub personal access token as a Travis variable. You can generate a token from [here](https://github.com/settings/tokens).

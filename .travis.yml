@@ -8,4 +8,13 @@ script:
   # this next line runs HTMLProofer on your built site; find out more at https://github.com/gjtorikian/html-proofer
   # - bundle exec rake test
 
+# uncomment these lines to auto-deploy to github pages
+# deploy:
+#   provider: pages
+#   skip_cleanup: true
+#   github_token: $github_token
+#   local_dir: _site
+#   on:
+#     branch: master
+
 sudo: false
