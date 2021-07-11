@@ -11,7 +11,9 @@ Hey, thanks for using this starter template! I guess I should explain why this e
 This is a simple template repository for [Jekyll](https://jekyllrb.com). It does two simple things over `jekyll new ...`:
 
 * by default, ejects [minima](https://github.com/jekyll/minima) from its gem wrapper; this makes it easier to see what Jekyll is doing under the hood, and makes it easy to build your own theme
-* adds template code for [Travis CI](https://travis-ci.com), which uses [rake](https://github.com/ruby/rake) and optionally [html-proofer](https://github.com/gjtorikian/html-proofer) to check if the site built correctly, and auto-deploys the site to GitHub Pages
+* adds two workflows for GitHub Actions:
+  1. a test action that builds the site on PR/push
+  2. an action to deploy to [GitHub Pages](https://pages.github.com/) off of `main`. Thanks to [`helaili/jekyll-action`](https://github.com/helaili/jekyll-action), this works out of the box with no secrets required
 
 Other than that, I basically leave minima untouched.
 
@@ -19,15 +21,15 @@ Why did I make this simple template? I love using Jekyll, but I'm not a huge fan
 
 In addition, it becomes a bit of a pain if you want to override some, but not all, of minima's defaults. Putting the SASS in `_sass` makes it easier to accomplish these kinds of changes.
 
-Finally, I have a few preferences on how I usually run my Jekyll setups: I like using html-proofer to catch egregiously bad HTML (and check for dead links, though it's a bit inconsistent on that); I like aliasing the longer `bundle exec ...` commands to shorter keywords (like `rake build`); and, I Like using Travis CI to let me know if I've committed a bad build of the site. They make my life easier, but are understandably strange opinionated choices.
+Finally, I have a few preferences on how I usually run my Jekyll setups: I like using html-proofer to catch egregiously bad HTML (and check for dead links, though it's a bit inconsistent on that); I like aliasing the longer `bundle exec ...` commands to shorter keywords (like `rake build`); and, I Like using GitHub Actions to let me know if I've committed a bad build of the site.
 
-Currently, this template uses Jekyll v4.0.0.
+Currently, this template uses Jekyll v4.0.0+.
 
 ## Development Setup
 
-Admittedly, this is a little more annoying to use than `jekyll new ...`, but only slightly so. 
+Admittedly, this is a little more annoying to use than `jekyll new ...`, but only slightly so.
 
-To use this template, you'll need to have some sort of Ruby on your system; I recommend that you use [rvm](https://rvm.io/), especially if you work on multiple different Ruby projects. Currently, the Travis build uses Ruby v2.6.3, but anything above v2.4.0 should be fine.
+To use this template, you'll need to have some sort of Ruby on your system; I recommend that you use [rvm](https://rvm.io/), especially if you work on multiple different Ruby projects. Currently, the Actions build uses Ruby `v2.7.4` and `v3.0.2` for test, and Ruby `3.0` for prod.
 
 If you haven't already, we're first going to install [bundler](https://bundler.io/):
 
@@ -52,7 +54,7 @@ Configuration file: /Users/malsf21/code/easy-jekyll-starter/_config.yml
             Source: /Users/malsf21/code/easy-jekyll-starter
        Destination: /Users/malsf21/code/easy-jekyll-starter/_site
  Incremental build: disabled. Enable with --incremental
-      Generating... 
+      Generating...
        Jekyll Feed: Generating feed for posts
                     done in 0.561 seconds.
  Auto-regeneration: enabled for '/Users/malsf21/code/easy-jekyll-starter'
@@ -80,21 +82,10 @@ $ rake test
 Running ["ScriptCheck", "ImageCheck", "LinkCheck"] on ["./_site"] on *.html...
 ```
 
-## Integrating With Travis
+## Actions and GitHub Pages
 
-I've packaged a `.travis.yml` that builds the site on a Ruby of your choice. By default, it does two things: just run `bundle exec jekyll build`, which will error if you have a Jekyll build error, and then automatically build and deploy the result of `bundle exec jekyll build` to GitHub Pages. This is useful if you're using gems (or other pre-deploy processing) that GitHub Pages' gem doesn't support.
+Deploying off of GitHub Pages is very simple. We consume [`helaili/jekyll-action`](https://github.com/helaili/jekyll-action), which automatically builds and deploys the site. We don't need to pass in a specific environment token, as it uses the default `GITHUB_TOKEN` env var.
 
-```yaml
-# this will fail if you don't set github_token in Travis!
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $github_token
-  local_dir: _site
-  on:
-    branch: master
-```
+## A bit of history
 
-In order to use it, you'll need to set the `$github_token` to a valid GitHub personal access token as a Travis variable. You can generate a token from [here](https://github.com/settings/tokens).
-
-In addition, there's also a commented-out line that runs html-proofer on the built site. This works with varying success - sometimes, HTTP timeouts will signify dead links, and sometimes, they signify bad internet - but it's a useful tool that you can include instead!
+This template used to use [Travis CI](https://travis-ci.com/), but for numerous reasons, I've decided to switch to GitHub Actions. One huge benefit is that you won't have to create a new access token!
