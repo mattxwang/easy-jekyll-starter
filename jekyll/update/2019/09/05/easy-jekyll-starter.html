@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Easy Jekyll Starter - What and Why? | Easy Jekyll Starter</title>
+<meta name="generator" content="Jekyll v4.3.1" />
+<meta property="og:title" content="Easy Jekyll Starter - What and Why?" />
+<meta name="author" content="matt" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Hey, thanks for using this starter template! I guess I should explain why this exists and what it does." />
+<meta property="og:description" content="Hey, thanks for using this starter template! I guess I should explain why this exists and what it does." />
+<link rel="canonical" href="https://malsf21.github.io/easy-jekyll-starter/easy-jekyll-starter/jekyll/update/2019/09/05/easy-jekyll-starter.html" />
+<meta property="og:url" content="https://malsf21.github.io/easy-jekyll-starter/easy-jekyll-starter/jekyll/update/2019/09/05/easy-jekyll-starter.html" />
+<meta property="og:site_name" content="Easy Jekyll Starter" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-09-05T23:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Easy Jekyll Starter - What and Why?" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"matt"},"dateModified":"2019-09-05T23:00:00+00:00","datePublished":"2019-09-05T23:00:00+00:00","description":"Hey, thanks for using this starter template! I guess I should explain why this exists and what it does.","headline":"Easy Jekyll Starter - What and Why?","mainEntityOfPage":{"@type":"WebPage","@id":"https://malsf21.github.io/easy-jekyll-starter/easy-jekyll-starter/jekyll/update/2019/09/05/easy-jekyll-starter.html"},"url":"https://malsf21.github.io/easy-jekyll-starter/easy-jekyll-starter/jekyll/update/2019/09/05/easy-jekyll-starter.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/easy-jekyll-starter/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://malsf21.github.io/easy-jekyll-starter/easy-jekyll-starter/feed.xml" title="Easy Jekyll Starter" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/easy-jekyll-starter/">Easy Jekyll Starter</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/easy-jekyll-starter/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Easy Jekyll Starter - What and Why?</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2019-09-05T23:00:00+00:00" itemprop="datePublished">Sep 5, 2019
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">matt</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Hey, thanks for using this starter template! I guess I should explain why this exists and what it does.</p>
+
+<p>This is a simple template repository for <a href="https://jekyllrb.com">Jekyll</a>. It does two simple things over <code class="language-plaintext highlighter-rouge">jekyll new ...</code>:</p>
+
+<ul>
+  <li>by default, ejects <a href="https://github.com/jekyll/minima">minima</a> from its gem wrapper; this makes it easier to see what Jekyll is doing under the hood, and makes it easy to build your own theme</li>
+  <li>adds two workflows for GitHub Actions:
+    <ol>
+      <li>a test action that builds the site on PR/push</li>
+      <li>an action to deploy to <a href="https://pages.github.com/">GitHub Pages</a> off of <code class="language-plaintext highlighter-rouge">main</code>. Thanks to <a href="https://github.com/helaili/jekyll-action"><code class="language-plaintext highlighter-rouge">helaili/jekyll-action</code></a>, this works out of the box with no secrets required</li>
+    </ol>
+  </li>
+</ul>
+
+<p>Other than that, I basically leave minima untouched.</p>
+
+<p>Why did I make this simple template? I love using Jekyll, but I’m not a huge fan of how minima is now bundled by default into <code class="language-plaintext highlighter-rouge">jekyll new ...</code>. Firstly, it obscures some of the logic of what Jekyll is doing (via the minima gem), which makes it harder to introduce Jekyll to my friends. Since this template ejects minima out of its gem, it should be easier to understand how <code class="language-plaintext highlighter-rouge">_includes</code>, <code class="language-plaintext highlighter-rouge">_layouts</code>, and YAML front matter work!</p>
+
+<p>In addition, it becomes a bit of a pain if you want to override some, but not all, of minima’s defaults. Putting the SASS in <code class="language-plaintext highlighter-rouge">_sass</code> makes it easier to accomplish these kinds of changes.</p>
+
+<p>Finally, I have a few preferences on how I usually run my Jekyll setups: I like using html-proofer to catch egregiously bad HTML (and check for dead links, though it’s a bit inconsistent on that); I like aliasing the longer <code class="language-plaintext highlighter-rouge">bundle exec ...</code> commands to shorter keywords (like <code class="language-plaintext highlighter-rouge">rake build</code>); and, I Like using GitHub Actions to let me know if I’ve committed a bad build of the site.</p>
+
+<p>Currently, this template uses Jekyll v4.0.0+.</p>
+
+<h2 id="development-setup">Development Setup</h2>
+
+<p>Admittedly, this is a little more annoying to use than <code class="language-plaintext highlighter-rouge">jekyll new ...</code>, but only slightly so.</p>
+
+<p>To use this template, you’ll need to have some sort of Ruby on your system; I recommend that you use <a href="https://rvm.io/">rvm</a>, especially if you work on multiple different Ruby projects. Currently, the Actions build uses Ruby <code class="language-plaintext highlighter-rouge">v2.7.4</code> and <code class="language-plaintext highlighter-rouge">v3.0.2</code> for test, and Ruby <code class="language-plaintext highlighter-rouge">3.0</code> for prod.</p>
+
+<p>If you haven’t already, we’re first going to install <a href="https://bundler.io/">bundler</a>:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>gem <span class="nb">install </span>bundler
+</code></pre></div></div>
+
+<p>Then, we’ll install all of our dependencies from our <code class="language-plaintext highlighter-rouge">Gemfile</code>.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bundle
+</code></pre></div></div>
+
+<p>I’ve committed <code class="language-plaintext highlighter-rouge">Gemfile.lock</code>, which specifies what versions of gems to use. If you’d like, you can run <code class="language-plaintext highlighter-rouge">bundle update</code> to update them.</p>
+
+<p>Now, you’re ready to use the site! You can use <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code> to serve the site, or <code class="language-plaintext highlighter-rouge">bundle exec jekyll build</code> to build it.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>rake serve
+bundle <span class="nb">exec </span>jekyll serve
+Configuration file: /Users/malsf21/code/easy-jekyll-starter/_config.yml
+            Source: /Users/malsf21/code/easy-jekyll-starter
+       Destination: /Users/malsf21/code/easy-jekyll-starter/_site
+ Incremental build: disabled. Enable with <span class="nt">--incremental</span>
+      Generating...
+       Jekyll Feed: Generating feed <span class="k">for </span>posts
+                    <span class="k">done in </span>0.561 seconds.
+ Auto-regeneration: enabled <span class="k">for</span> <span class="s1">'/Users/malsf21/code/easy-jekyll-starter'</span>
+    Server address: http://127.0.0.1:4000/easy-jekyll-starter/
+  Server running... press ctrl-c to stop.
+</code></pre></div></div>
+
+<p>Those commands are a bit of a mouthful, so I’ve made quick rake shortcuts that will save you a few valuable keystrokes:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>rake
+<span class="c"># same as running bundle exec jekyll build</span>
+<span class="nv">$ </span>rake build
+<span class="c"># also same as running bundle exec jekyll build</span>
+<span class="nv">$ </span>rake serve
+<span class="c"># same as running bundle exec jekyll serve</span>
+</code></pre></div></div>
+
+<p>In addition, I’ve also added html-proofer, which can test the validity of your HTML. You can use it like so:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>rake build
+...
+<span class="nv">$ </span>rake <span class="nb">test
+</span>Running <span class="o">[</span><span class="s2">"ScriptCheck"</span>, <span class="s2">"ImageCheck"</span>, <span class="s2">"LinkCheck"</span><span class="o">]</span> on <span class="o">[</span><span class="s2">"./_site"</span><span class="o">]</span> on <span class="k">*</span>.html...
+</code></pre></div></div>
+
+<h2 id="actions-and-github-pages">Actions and GitHub Pages</h2>
+
+<p>Deploying off of GitHub Pages is very simple. We consume <a href="https://github.com/helaili/jekyll-action"><code class="language-plaintext highlighter-rouge">helaili/jekyll-action</code></a>, which automatically builds and deploys the site. We don’t need to pass in a specific environment token, as it uses the default <code class="language-plaintext highlighter-rouge">GITHUB_TOKEN</code> env var.</p>
+
+<h2 id="a-bit-of-history">A bit of history</h2>
+
+<p>This template used to use <a href="https://travis-ci.com/">Travis CI</a>, but for numerous reasons, I’ve decided to switch to GitHub Actions. One huge benefit is that you won’t have to create a new access token!</p>
+
+  </div><a class="u-url" href="/easy-jekyll-starter/jekyll/update/2019/09/05/easy-jekyll-starter.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/easy-jekyll-starter/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Easy Jekyll Starter</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Easy Jekyll Starter</li><li><a class="u-email" href="mailto:matt@matthewwang.me">matt@matthewwang.me</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/malsf21"><svg class="svg-icon"><use xlink:href="/easy-jekyll-starter/assets/minima-social-icons.svg#github"></use></svg> <span class="username">malsf21</span></a></li><li><a href="https://www.twitter.com/malsf21"><svg class="svg-icon"><use xlink:href="/easy-jekyll-starter/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">malsf21</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>🧪A (lightly) opinionated Jekyll starter designed to replace jekyll new. Ejects minima out of its gem theme, adds template code for Travis CI build, test, and deploy.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
